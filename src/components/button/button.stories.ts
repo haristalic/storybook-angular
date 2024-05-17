@@ -1,45 +1,112 @@
 import type { Meta, StoryObj } from '@storybook/angular';
-import { fn } from '@storybook/test';
 import { ButtonComponent } from './button.component';
 
 const meta: Meta<ButtonComponent> = {
   title: 'Components/Button',
   component: ButtonComponent,
   tags: ['autodocs'],
+  render: (args) => ({
+    props: {
+      ...args,
+    },
+  template: `<app-button
+  [label]="label"
+  [disabled]="disabled"
+  [color]="color"
+  [colorHover]="colorHover"
+  [bgColor]="bgColor"
+  [size]="size"
+></app-button>`,
+  }),
   argTypes: {
-    backgroundColor: {
-      control: 'color',
+    label: {
+      description: 'Text inside button',
+      control: {
+        type: 'text',
+      },
+    },
+    size: {
+      control: {
+        type: 'select',
+      },
+      options: ['large', 'small', 'normal'],
+      description: 'Sizes modify padding of the buton.',
+      defaultValue: { summary: 'normal' }
+
+    },
+    disabled: {
+      description: 'If the button is disabled',
+      control: {
+        type: 'boolean',
+      },
+      defaultValue: { summary: false}
+
+    },
+    color: {
+      description: 'Font color',
+      control: {
+        type: 'color',
+      },
+    },
+    bgColor: {
+      description: 'Background color of button',
+      control: {
+        type: 'color',
+      },
+    },
+    colorHover: {
+      description: 'Color hover of the button',
+      control: {
+        type: 'color',
+      },
+
+      clicked: {
+        action: 'clicked',
+      },
     },
   },
-  args: { onClick: fn() },
 };
 
 export default meta;
 type Story = StoryObj<ButtonComponent>;
 
-export const Primary: Story = {
-  args: {
-    primary: true,
-    label: 'Button',
-  },
-};
-
-export const Secondary: Story = {
+export const ButtonDefault: Story = {
   args: {
     label: 'Button',
+    disabled: false,
+    size: 'normal',
+    color: 'white',
+    bgColor: '#249bd5',
+    colorHover: 'red', 
   },
 };
-
-export const Large: Story = {
+export const ButtonLarge: Story = {
   args: {
+    label: 'Button',
+    disabled: false,
     size: 'large',
-    label: 'Button',
+    color: 'white',
+    bgColor: '#249bd5',
+    colorHover: 'red', 
   },
 };
-
-export const Small: Story = {
+export const ButtonSmall: Story = {
   args: {
-    size: 'small',
     label: 'Button',
+    disabled: false,
+    size: 'small',
+    color: 'white',
+    bgColor: '#249bd5',
+    colorHover: 'red', 
+  },
+};
+export const ButtonDisable: Story = {
+  args: {
+    label: 'Button',
+    disabled: true,
+    size: 'normal',
+    color: 'white',
+    bgColor: '#249bd5',
+    colorHover: 'red', 
   },
 };

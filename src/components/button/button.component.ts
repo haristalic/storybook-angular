@@ -9,18 +9,21 @@ import { Component, Input, Output, EventEmitter } from '@angular/core';
   styleUrl: './button.component.scss',
 })
 export class ButtonComponent {
-  @Input() primary = false;
-  @Input() backgroundColor?: string;
-  @Input() size: 'small' | 'medium' | 'large' = 'medium';
-  @Input() label = 'Button';
+  @Input() label: string = "Button"
+  @Input() disabled: boolean = false;
+  @Input() color: string = "white";
+  @Input() colorHover: string = "white";
+  @Input() bgColor: string = "#1b77cc";
+  @Input() size: 'small' | 'normal' | 'large' = 'normal';
 
-  @Output() onClick = new EventEmitter<Event>();
+  @Output() clicked: EventEmitter<boolean> = new EventEmitter<boolean>();
+
+  public triggedButton(): void {
+      this.clicked.emit(true);
+  }
 
   public get classes(): string[] {
-    const mode = this.primary
-      ? 'storybook-button--primary'
-      : 'storybook-button--secondary';
 
-    return ['storybook-button', `storybook-button--${this.size}`, mode];
+    return ['storybook-button', `storybook-button--${this.size}`];
   }
 }

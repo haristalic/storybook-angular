@@ -7,11 +7,10 @@ const meta: Meta<LinkComponent> = {
   tags: ['autodocs'],
   render: (args: LinkComponent) => ({
     template: `
-      <app-link
-        [color]="color"
-        [href]="href"
-        [target]="target"
-        [label]="label>Link </app-link>
+    <app-link>
+    [color]="color" [href]="href" [target]="target" [label]="label>Link
+    </app-link>
+  
     `,
     props: {
       ...args,
@@ -32,10 +31,11 @@ const meta: Meta<LinkComponent> = {
       description:
         'Classes for color of link',
     },
-
     href: {
-
-    }
+      control: {
+        type: 'text',
+      },
+    },
   },
 };
 
@@ -45,7 +45,7 @@ type Story = StoryObj<LinkComponent>;
 
 export const Default: Story = {
   args: {
-    label: 'Link din',
+    label: 'Link',
     color: 'primary',
   },
 };

@@ -1,4 +1,5 @@
 import { Meta, StoryObj } from '@storybook/angular';
+import { Colors } from '../../models/colors';
 import { ProgressBarComponent } from './progress-bar.component';
 
 const meta: Meta<ProgressBarComponent> = {
@@ -42,14 +43,18 @@ const meta: Meta<ProgressBarComponent> = {
     },
     colorBar: {
       description: 'Color of the bar',
+      options: Object.keys(Colors),
+      mapping: Colors,
       control: {
-        type: 'color',
+        type: 'select',
       },
     },
     colorFillBar: {
       description: 'Color of the filled part',
+      options: Object.keys(Colors),
+      mapping: Colors,
       control: {
-        type: 'color',
+        type: 'select',
       },
     },
   },
@@ -63,7 +68,7 @@ export const Default: Story = {
     width: '50%',
     height: '20px',
     value: 20,
-    colorBar: '#eee',
-    colorFillBar: '#53a848'
+    colorBar: Colors.DARK,
+    colorFillBar: Colors.SUMMER
   },
 };

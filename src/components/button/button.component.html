@@ -1,8 +1,13 @@
-<button
-  type="button"
-  (click)="onClick.emit($event)"
-  [ngClass]="classes"
-  [ngStyle]="{ 'background-color': backgroundColor }"
->
-  {{ label }}
+<button 
+    [ngStyle]="{
+        '--bgcolor': bgColor,
+        '--color-hover': colorHover,
+        '--color': color,
+    }"
+    [class]="disabled ? 'button-class-disable' : 'button-class'"
+    [disabled]="disabled"
+    [ngClass]="classes"
+    (click)="triggedButton()">
+   
+    {{ label }}
 </button>
