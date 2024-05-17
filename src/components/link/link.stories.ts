@@ -1,8 +1,8 @@
-import { Meta, StoryObj, moduleMetadata } from '@storybook/angular';
+import { Meta, StoryObj } from '@storybook/angular';
 import { LinkComponent } from './link.component';
 
 const meta: Meta<LinkComponent> = {
-  title: 'Example/Link',
+  title: 'Components/Link',
   component: LinkComponent,
   tags: ['autodocs'],
   render: (args: LinkComponent) => ({
@@ -11,9 +11,7 @@ const meta: Meta<LinkComponent> = {
         [color]="color"
         [href]="href"
         [target]="target"
-        [label]="label"
-      
-      >Link      </app-link>
+        [label]="label>Link </app-link>
     `,
     props: {
       ...args,

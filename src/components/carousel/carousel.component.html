@@ -1,0 +1,22 @@
+<div
+  class="carousel-slider"
+  [ngStyle]="{
+    '--bgcolor-btn': bgColorBtn,
+    '--bgcolor-hover-btn': bgColorHoverBtn
+  }"
+>
+  <div id="slider">
+    <div
+      class="slide"
+      [style.display]="sliders[currentIndex] ? 'block' : 'none'"
+      [ngStyle]="{
+        color: color
+      }"
+    >
+      {{ sliders[currentIndex].content }}
+    </div>
+  </div>
+  <button class="prev" (click)="previous()"><</button>
+  <button class="next" (click)="next()">></button>
+</div>
+

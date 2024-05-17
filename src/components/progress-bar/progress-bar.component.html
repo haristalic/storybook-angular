@@ -1,0 +1,12 @@
+<div
+  class="progress-bar"
+  [style.background-color]="colorBar"
+  [style.width]="width"
+  [style.height]="height"
+>
+  <div
+    class="progress-bar-fill"
+    [style.background-color]="colorFillBar"
+    [style.width.%]="(value * 100) / maxValue"
+  ></div>
+</div>

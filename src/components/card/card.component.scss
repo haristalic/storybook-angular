@@ -1,0 +1,29 @@
+.card-simple {
+    width: 100%;
+    height: 100%;
+    min-height: 100px;
+    border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+    margin: 5px;
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+    font-family: 'Nunito Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+}
+
+.card-simple-title {
+    padding: 5px 20px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    font-weight: 600;
+    border-bottom-width: 1px;
+    border-bottom-style: solid;
+    font-size: 16px;
+}
+
+.card-simple-content {
+    width: 100%;
+    height: 100%;
+    padding: 20px;
+    display: flex;
+}

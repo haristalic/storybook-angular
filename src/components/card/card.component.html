@@ -1,0 +1,11 @@
+<div class="card-simple"
+    [style.background-color]="bgColor"
+    [style.color]="color">
+    <div class="card-simple-title" 
+        [style.border-bottom-color]="colorBorder">
+        <span>{{ titleCard }}</span>
+    </div>
+    <div class="card-simple-content">
+        <ng-content></ng-content>
+    </div>
+</div>
